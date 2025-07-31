@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CardioScope – Heart Risk Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom right, #10101a, #0f0f18);
+      color: #f4f4f4;
+      overflow-x: hidden;
+      background-image: radial-gradient(#222 1px, transparent 1px), radial-gradient(#222 1px, transparent 1px);
+      background-position: 0 0, 25px 25px;
+      background-size: 50px 50px;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e1e2e, #2a2a3d);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #00f7ff;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px #000;
+    }
+
+    header p {
+      color: #ff80bf;
+      font-size: 1rem;
+    }
+
+    .prezi-container {
+      text-align: center;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    iframe {
+      border: none;
+      width: 90%;
+      height: 420px;
+      max-width: 850px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(255, 0, 128, 0.4);
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #181824;
+      padding: 30px;
+      margin: 30px 0;
+      border-left: 5px solid #e91e63;
+      border-radius: 14px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+
+    .card h2 {
+      color: #00f7ff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .highlight {
+      color: #ff4da6;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #121218;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 2px solid #e91e63;
+      box-shadow: 0 -5px 20px rgba(255, 0, 128, 0.1);
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      iframe { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🧠 CardioScope</h1>
+    <p>Predicting Heart Attack Risk using AI & IBM Watson AutoAI</p>
+  </header>
+<!-- ✨ Bio Section Start -->
+<!-- 💖 About Me Section (Compact + Girly Theme) -->
+<section style="background: linear-gradient(to right, #fdf0ff, #ffe6f0); color: #4a148c; padding: 30px 15px; text-align: center; border-bottom: 2px dashed #ce93d8;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-size: 2em; color: #d81b60; margin-bottom: 10px; font-family: 'Trebuchet MS', sans-serif;">
+        💫🌸 Greetings! and welcome to my project!
+      </h2>
+      <p style="font-size: 1.05em; line-height: 1.6em; font-family: 'Segoe UI', sans-serif; color: #6a1b9a;">
+        Hi! I’m <strong style="color: #ad1457;">Vaibhavi Dhankhar</strong>, a B.Tech student specializing in <strong>Computer Science & Data Science</strong>. I’ve recently completed my first year. With a strong passion driven by a strong curiosity to enhance both my technical knowledge and practical skills, I joined this IBM internship to expand my knowledge, sharpen my skills, and gain hands-on experience in real-world problem solving.
+        <br><br>
+        During the internship, I gravitated toward this AI-based project because it reflects my growing interest in intelligent systems and my ability to work with structured data, patterns, and prediction models — skills I've developed through coursework and practice. This project-based learning experience has introduced me to exciting challenges and new technologies — especially in the field of AI, which I believe is shaping the future of data-driven solutions.
+        <br><br>
+        I chose this project as it matched the strengths I developed through practice and during my coursework — like working with structured data, predictive models, and pattern analysis. This journey has been all about learning, growing, and embracing the future of intelligent systems 💫.
+      </p>
+    </div>
+  </section>
+  
+  <!-- ✨ Bio Section End -->
+  <div class="prezi-container">
+    <h2 style="color: #ff80bf; font-size: 1.3rem;">📽️ Presentation Preview</h2>
+    <iframe src="https://prezi.com/p/embed/cAqEHrVxldnsHpaEw00Q/" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <div class="card">
+      <h2>🔍 Project Overview</h2>
+      <p>
+        <span class="highlight">CardioScope</span> is a machine learning model designed to predict the risk of heart attacks using patient health data.
+        It leverages <span class="highlight">IBM Watson AutoAI</span> to automatically perform data preprocessing, feature selection, model selection, and hyperparameter tuning — all within a few clicks and lines of Python.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>💡 Why It Matters</h2>
+      <p>
+        Cardiovascular diseases cause over <span class="highlight">17 million deaths</span> annually. Early detection is crucial.
+        With AI-powered predictions, doctors can proactively treat high-risk patients, reducing mortality and improving health outcomes.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ Tools & Technologies</h2>
+      <p>
+        ✅ IBM Watson Studio & AutoAI<br>
+        ✅ Google Colab (Data exploration, EDA)<br>
+        ✅ Python, Pandas, Seaborn, Matplotlib<br>
+        ✅ GitHub Pages for showcasing project<br>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Workflow Summary</h2>
+      <p>
+        1. Data uploaded to Watson Studio<br>
+        2. AutoAI analyzes and ranks pipelines<br>
+        3. Best model selected and evaluated<br>
+        4. Model exported as Python notebook<br>
+        5. Project documented via Colab + GitHub<br>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Vaibhavi Dhankhar · <span class="highlight">CardioScope Project</span> · Built with 💖 IBM Watson & Python
+  </footer>
+
+</body>
+</html>
