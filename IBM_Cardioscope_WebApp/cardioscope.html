@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CardioScope AI - Heart Risk Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans&family=Quicksand:wght@500&family=Nunito:wght@400&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #ffffff;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow-x: hidden;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+
+    canvas#stars {
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 30px;
+      color: #ff8cc6;
+      text-shadow: 0 0 10px #ff8cc6;
+    }
+
+    .about {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      color: #ffd9f5;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 20px #d98eff88;
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      background: #d98eff;
+      color: white;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #b96aff;
+      box-shadow: 0 0 10px #ff8cc6;
+    }
+
+    .result-box {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .result-box h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+    }
+
+    .darkmode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ffffff22;
+      padding: 8px 14px;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+
+    .heartbeat {
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .greeting {
+      font-size: 1.2rem;
+      color: #ffd4ec;
+      text-align: center;
+      margin-bottom: 20px;
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+    }
+
+    .show {
+      opacity: 1 !important;
+    }
+
+    /* LIGHT MODE STYLES */
+    body.light {
+      background: linear-gradient(to bottom right, #fef6ff, #ffe0f0);
+      color: #222;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body.light .container {
+      background: #ffffffcc;
+      box-shadow: 0 0 20px #ffb4f4;
+    }
+
+    body.light input, body.light select {
+      background: #fff0f8;
+      color: #333;
+    }
+
+    body.light .btn {
+      background: #ff9ada;
+      color: #000;
+    }
+
+    body.light .btn:hover {
+      background: #ff78c8;
+      box-shadow: 0 0 8px #ffb6e9;
+    }
+
+    body.light .result-box {
+      background: #fff6f9;
+      color: #333;
+    }
+
+    body.light .darkmode-toggle {
+      background: #ffccf1;
+      color: #000;
+    }
+
+    body.light .about {
+      color: #aa1683;
+    }
+
+    body.light h1 {
+      color: #d92f98;
+      text-shadow: none;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<h1>💗 CardioScope AI</h1>
+<div class="about">CardioScope AI is a friendly heart wellness tool that helps you estimate your risk of heart issues based on your lifestyle and health inputs. It’s not a diagnosis, but a smart first step toward understanding your heart better 💖.</div>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" src="piano.mp3" loop></audio>
+
+<!-- 🔇 Music Toggle Button -->
+<div style="position: fixed; bottom: 20px; left: 20px; z-index: 999;">
+  <button id="musicToggle" title="Toggle music" style="background: none; border: none; font-size: 1.8rem; cursor: pointer;">🔊</button>
+</div>
+
+<div class="container">
+  <div id="initial">
+    <label>First Name*</label>
+    <input type="text" id="fname" required>
+
+    <label>Middle Name</label>
+    <input type="text" id="mname">
+
+    <label>Last Name</label>
+    <input type="text" id="lname">
+
+    <label>Country</label>
+    <select id="country">
+      <option value="">Select Country</option>
+      <option>India</option>
+      <option>USA</option>
+      <option>UK</option>
+      <option>Canada</option>
+      <option>Australia</option>
+      <option>Germany</option>
+      <option>Japan</option>
+      <option>France</option>
+      <option>Brazil</option>
+      <option>South Africa</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div id="greeting" class="greeting hidden heartbeat">Hey there 💖! Welcome....Let’s take a sweet pause and understand your heart better and take care of it together.</div>
+
+  <form id="healthForm" class="hidden">
+    <label>Age</label>
+    <input type="number" min="1" max="100">
+
+    <label>Sex</label>
+    <select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Non-Binary</option>
+    </select>
+
+    <label>Cholesterol (120-420)</label>
+    <input type="number" min="120" max="420">
+
+    <label>Diabetes</label>
+    <select><option>Yes</option><option>No</option></select>
+
+    <label>Smoking</label>
+    <select><option>Yes</option><option>No</option></select>
+
+    <label>Drinking</label>
+    <select><option>Yes</option><option>No</option></select>
+
+    <label>Previous Heart Symptoms</label>
+    <select><option>Yes</option><option>No</option></select>
+
+    <label>Medication Use</label>
+    <select><option>Yes</option><option>No</option></select>
+
+    <label>Diet</label>
+    <select>
+      <option>Healthy</option>
+      <option>Unhealthy</option>
+      <option>Both</option>
+    </select>
+
+    <label>Stress Level (1-10)</label>
+    <input type="number" min="1" max="10">
+
+    <label>Physical Activity Days Per Week (0–7)</label>
+    <input type="number" min="0" max="7">
+
+    <label>Weight (kg)</label>
+    <input type="number" id="weight">
+
+    <label>Height (cm)</label>
+    <input type="number" id="height">
+
+    <label>BMI (Auto-calculated)</label>
+    <input type="text" id="bmi" readonly>
+
+    <label>Sleep Hours Per Day (0–15)</label>
+    <input type="number" min="0" max="15">
+
+    <button type="button" class="btn" onclick="predict()">🔮 Predict</button>
+    <button type="reset" class="btn">🔁 Reset</button>
+  </form>
+
+  <div class="result-box hidden" id="resultBox">
+    <h3 id="riskStatus"></h3>
+    <p id="probability"></p>
+    <p id="advice"></p>
+  </div>
+</div>
+
+<div class="darkmode-toggle" onclick="toggleDark()">🌓 Theme</div>
+
+<script>
+  // star background
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const stars = Array(150).fill().map(() => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    alpha: Math.random(),
+    dx: Math.random() * 0.5
+  }));
+
+  function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      s.x -= s.dx;
+      if (s.x < 0) s.x = canvas.width;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(animateStars);
+  }
+  animateStars();
+
+  // greeting trigger
+  document.getElementById('country').addEventListener('change', () => {
+    document.getElementById('greeting').classList.remove('hidden');
+    setTimeout(() => {
+      document.getElementById('greeting').classList.add('show');
+      document.getElementById('healthForm').classList.remove('hidden');
+    }, 500);
+  });
+
+  // BMI calculation
+  document.getElementById('weight').addEventListener('input', calcBMI);
+  document.getElementById('height').addEventListener('input', calcBMI);
+  function calcBMI() {
+    let w = parseFloat(document.getElementById('weight').value);
+    let h = parseFloat(document.getElementById('height').value) / 100;
+    if (w && h) {
+      document.getElementById('bmi').value = (w / (h * h)).toFixed(2);
+    }
+  }
+
+  // Prediction Mock
+  function predict() {
+    const resultBox = document.getElementById('resultBox');
+    const riskStatus = document.getElementById('riskStatus');
+    const probability = document.getElementById('probability');
+    const advice = document.getElementById('advice');
+    const score = Math.random();
+    resultBox.classList.remove('hidden');
+
+    if (score > 0.5) {
+      riskStatus.innerText = "🚨 High Risk";
+      probability.innerText = `Estimated Probability: ${(score * 100).toFixed(1)}%`;
+      advice.innerText = "Please consult a healthcare provider and take immediate action.";
+    } else {
+      riskStatus.innerText = "✅ Low Risk";
+      probability.innerText = `Estimated Probability: ${(score * 100).toFixed(1)}%`;
+      advice.innerText = "You're doing well! Maintain healthy habits and regular checkups.";
+    }
+  }
+
+  // Theme Toggle
+  function toggleDark() {
+    document.body.classList.toggle('light');
+  }
+
+// 🎵 Background music logic
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+let isPlaying = false;
+
+// Start music after first click (once)
+window.addEventListener("click", () => {
+  if (!isPlaying) {
+    bgMusic.volume = 0.3;
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      musicToggle.innerText = '🔊';
+    }).catch(() => {
+      musicToggle.innerText = '🔇';
+    });
+  }
+}, { once: true });
+
+// Toggle button
+musicToggle.addEventListener("click", () => {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicToggle.innerText = '🔊';
+  } else {
+    bgMusic.pause();
+    musicToggle.innerText = '🔇';
+  }
+});
+
+  </script>
+</body>
+</html>
