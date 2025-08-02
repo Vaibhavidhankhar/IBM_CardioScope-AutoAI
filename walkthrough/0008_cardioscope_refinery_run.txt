@@ -1,0 +1,104 @@
+2025-08-02 09:45:19.063+0000 INFO: Job run ID: 334a55cc-c3a8-4eba-af42-6444e95bfb1d
+2025-08-02 09:45:19.116+0000 INFO: Loading libraries.
+2025-08-02 09:45:19.123+0000 INFO: Running jsonlite v 1.8.0
+2025-08-02 09:45:19.124+0000 INFO: Running dplyr v 1.0.9
+2025-08-02 09:45:19.126+0000 INFO: Running dbplyr v 2.1.1
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+2025-08-02 09:45:20.506+0000 INFO: Runtime environment: Spark
+2025-08-02 09:45:20.506+0000 INFO: Initializing parameters for Data Refinery flow.
+Spark package found in SPARK_HOME: /opt/ibm/spark
+25/08/02 09:45:21 INFO SparkContext: Running Spark version 3.4.4
+25/08/02 09:45:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/08/02 09:45:21 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+25/08/02 09:45:21 INFO ResourceUtils: ==============================================================
+25/08/02 09:45:21 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/08/02 09:45:21 INFO ResourceUtils: ==============================================================
+25/08/02 09:45:21 INFO SparkContext: Submitted application: SparkR
+25/08/02 09:45:21 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/08/02 09:45:21 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+25/08/02 09:45:21 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/08/02 09:45:21 INFO SecurityManager: Changing view acls to: spark
+25/08/02 09:45:21 INFO SecurityManager: Changing modify acls to: spark
+25/08/02 09:45:21 INFO SecurityManager: Changing view acls groups to: 
+25/08/02 09:45:21 INFO SecurityManager: Changing modify acls groups to: 
+25/08/02 09:45:21 INFO SecurityManager: SecurityManager: authentication enabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+25/08/02 09:45:22 INFO Utils: Successfully started service 'sparkDriver' on port 6067.
+25/08/02 09:45:22 INFO SparkEnv: Registering MapOutputTracker
+25/08/02 09:45:22 INFO SparkEnv: Registering BlockManagerMaster
+25/08/02 09:45:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/08/02 09:45:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/08/02 09:45:22 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/08/02 09:45:22 INFO DiskBlockManager: Created local directory at /tmp/spark/scratch/blockmgr-bbf914e7-c591-4a57-915f-43b149142015
+25/08/02 09:45:22 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/08/02 09:45:22 INFO SparkEnv: Registering OutputCommitCoordinator
+25/08/02 09:45:22 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/08/02 09:45:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/08/02 09:45:23 INFO SparkContext: Added file file:/opt/ibm/third-party/libs/exec/Runner3.R at file:/opt/ibm/third-party/libs/exec/Runner3.R with timestamp 1754127921529
+25/08/02 09:45:23 INFO Utils: Copying /opt/ibm/third-party/libs/exec/Runner3.R to /tmp/spark/scratch/spark-6026f471-39df-41f2-a969-e0b1f4a54b96/userFiles-880d4eb9-1ca9-450e-ab39-c98abc6bd387/Runner3.R
+25/08/02 09:45:23 INFO Executor: Starting executor ID driver on host spark-master-334a55cc-c3a8-4eba-af42-6444e95bfb1d-7cb56654sjqjm
+25/08/02 09:45:23 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): 'file:/home/spark/shared/user-libs/spark/*,file:/home/spark/shared/user-libs/common/*,file:/home/spark/shared/user-libs/connectors/*,file:/opt/ibm/connectors/s3/*,file:/opt/ibm/third-party/libs/spark2/*,file:/opt/ibm/third-party/libs/common/*,file:/opt/ibm/third-party/libs/connectors/*,file:/opt/ibm/connectors/data-engine/*,file:/opt/ibm/connectors/wxd/*,file:/opt/ibm/spark/external-jars/*,file:/home/spark/shared/*'
+25/08/02 09:45:23 INFO Executor: Fetching file:/opt/ibm/third-party/libs/exec/Runner3.R with timestamp 1754127921529
+25/08/02 09:45:23 INFO Utils: /opt/ibm/third-party/libs/exec/Runner3.R has been previously copied to /tmp/spark/scratch/spark-6026f471-39df-41f2-a969-e0b1f4a54b96/userFiles-880d4eb9-1ca9-450e-ab39-c98abc6bd387/Runner3.R
+25/08/02 09:45:23 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 6068.
+25/08/02 09:45:23 INFO NettyBlockTransferService: Server created on spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d 0.0.0.0:6068
+25/08/02 09:45:23 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/08/02 09:45:23 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d, 6068, None)
+25/08/02 09:45:23 INFO BlockManagerMasterEndpoint: Registering block manager spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d:6068 with 2.2 GiB RAM, BlockManagerId(driver, spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d, 6068, None)
+25/08/02 09:45:23 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d, 6068, None)
+25/08/02 09:45:23 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d, 6068, None)
+25/08/02 09:45:23 INFO SingleEventLogFileWriter: Logging events to file:/home/spark/shared/spark-events/local-1754127923222.inprogress
+25/08/02 09:45:24 INFO HiveConf: Found configuration file null
+25/08/02 09:45:24 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+25/08/02 09:45:24 INFO SharedState: Warehouse path is 'file:/home/spark/shared/spark-warehouse'.
+25/08/02 09:45:25 INFO SparkContext: SparkContext is stopping with exitCode 0.
+25/08/02 09:45:25 INFO SparkUI: Stopped Spark web UI at http://spark-master-headless-334a55cc-c3a8-4eba-af42-6444e95bfb1d:4040
+25/08/02 09:45:25 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+25/08/02 09:45:25 INFO MemoryStore: MemoryStore cleared
+25/08/02 09:45:25 INFO BlockManager: BlockManager stopped
+25/08/02 09:45:25 INFO BlockManagerMaster: BlockManagerMaster stopped
+25/08/02 09:45:25 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+25/08/02 09:45:25 INFO SparkContext: Successfully stopped SparkContext
+2025-08-02 09:45:25.873+0000 INFO: Set additional spark config properties.
+2025-08-02 09:45:37.431+0000 INFO: Connected to Spark runtime environment.
+2025-08-02 09:45:37.432+0000 INFO: R version 4.2.0 (2022-04-22)
+2025-08-02 09:45:37.432+0000 INFO: Running Spark version 3.4.4
+2025-08-02 09:45:37.439+0000 INFO: Running Sparklyr version 1.7.6
+2025-08-02 09:45:37.732+0000 INFO: Running Arrow version 14.0.2.1
+2025-08-02 09:45:37.734+0000 INFO: Registering UDFs.
+2025-08-02 09:45:38.485+0000 INFO: Received source and target information from job run configuration.
+2025-08-02 09:45:38.487+0000 INFO: Completed processing user info from authentication token.
+2025-08-02 09:45:38.758+0000 INFO: Generated service authorization token for Data Refinery flow run.
+2025-08-02 09:45:38.922+0000 INFO: Running ShaperFlowPkg version 5.2.3 (IMAGE:5.1.485)
+2025-08-02 09:45:38.923+0000 INFO: Running Connector version 13.0.156
+2025-08-02 09:45:38.923+0000 INFO: Number of partitions: 3
+2025-08-02 09:45:39.445+0000 INFO: Reading Data Refinery flow: heart_data_refined.csv
+2025-08-02 09:45:39.447+0000 INFO: Creating Spark payload: Processing source and target properties, and operations.
+2025-08-02 09:45:42.038+0000 INFO: Completed reading properties for 'source1': heart_attack_prediction_dataset_whole.csv
+2025-08-02 09:45:42.039+0000 INFO: Data source type: bluemixcloudobjectstorage
+2025-08-02 09:45:42.040+0000 INFO: AvailMemBytes: 1287033803 Size: 1456385 Push_Filters: FALSE Cache: TRUE
+2025-08-02 09:45:59.129+0000 INFO: Validating operation: 0bcf813e-b32d-4e52-8777-0a67cdf2c008
+2025-08-02 09:46:00.471+0000 INFO: Validating operation: 75d8580f-76d7-46f9-91b5-11eebaeb84ae
+2025-08-02 09:46:00.793+0000 INFO: Validating operation: 895612b5-d903-40d0-b462-6636c89e6743
+2025-08-02 09:46:02.073+0000 INFO: Completed reading properties for 'target1': heart_attack_prediction_dataset_whole_csv_shaped
+2025-08-02 09:46:02.073+0000 INFO: Data source type: bluemixcloudobjectstorage
+2025-08-02 09:46:02.073+0000 INFO: Running Spark payload.
+2025-08-02 09:46:07.677+0000 INFO: Time taken to run spark payload: 5 secs
+2025-08-02 09:46:09.513+0000 INFO: Created data asset 'heart_attack_prediction_dataset_whole_csv_shaped'.
+2025-08-02 09:46:10.006+0000 INFO: Created attachment for 'heart_attack_prediction_dataset_whole_csv_shaped'. 
+2025-08-02 09:46:10.204+0000 INFO: Applying lineage event: DATASET_CREATED_FROM_DATAFLOW
+2025-08-02 09:46:10.405+0000 INFO: Total execution time : 32 secs
+2025-08-02 09:46:10.405+0000 INFO: Updating job run status to 'FINISHED'.
+2025-08-02 09:46:10.406+0000 INFO: 8763 rows read.
+2025-08-02 09:46:10.406+0000 INFO: 1219437 bytes read.
+2025-08-02 09:46:10.407+0000 INFO: 8763 rows written.
+2025-08-02 09:46:10.407+0000 INFO: 1311889 bytes written.
+Warning messages:
+1: package ‘ShaperFlowPkg’ was built under R version 4.3.3 
+2: In system("timedatectl", intern = TRUE) :
+  running command 'timedatectl' had status 1
+3: Failed to locate timezone database 
+4: package ‘SparkR’ was built under R version 4.4.1 
+25/08/02 09:46:14 INFO ShutdownHookManager: Shutdown hook called
+25/08/02 09:46:14 INFO ShutdownHookManager: Deleting directory /tmp/spark-aedc3754-06c3-4abc-9273-186ec57166b5
+25/08/02 09:46:14 INFO ShutdownHookManager: Deleting directory /tmp/spark/scratch/spark-6026f471-39df-41f2-a969-e0b1f4a54b96
