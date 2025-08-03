@@ -10,7 +10,7 @@
 |------------|--------|
 | 🧠 Try the Predictor | [CardioScope Web App](https://vaibhavidhankhar.github.io/IBM_CardioScope-AutoAI/#walkthrough) |
 | 📊 Google Colab Notebook | [Colab Notebook](https://github.com/Vaibhavidhankhar/IBM_CardioScope-AutoAI/blob/main/CardioScope_Model_Code.ipynb) |
-| 📽️ PPT Presentation | [View Presentation](https://vaibhavidhankhar.github.io/IBM_CardioScope-AutoAI/#presentation) |
+| 📽️ PPT Presentation | [View Presentation](CardioScope_Project_Presentation.pptx) |
 | 📸 Project Walkthrough | [Walkthrough Screens]() |
 | 🏠 Homepage | [GitHub Pages Site](https://github.com/Vaibhavidhankhar/IBM_CardioScope-AutoAI.git) |
 
