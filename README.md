@@ -73,7 +73,7 @@
 | 👨‍💻 Machine Learning | IBM AutoAI, Watson Studio, Python |
 | 🗂️ Dataset | Kaggle CSV |
 | 🌐 Frontend | HTML, CSS, JavaScript |
-| 🌐 Frontend | Python |
+| 🌐 Backend | Python |
 | 🎨 UI Theme | Galaxy-style with Orbitron, Open Sans fonts |
 | 📦 Deployment | GitHub Pages |
 | 📄 Docs | Colab Notebook, PPT, Walkthrough |
