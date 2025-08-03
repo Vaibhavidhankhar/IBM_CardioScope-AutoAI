@@ -22,11 +22,13 @@
 **CardioScope AI** is an ML-powered web application that predicts a person’s heart attack risk using critical health indicators. It combines:
 
 - ✅ Dataset-driven model built via **IBM Watson AutoAI**
+- ✅ Dataset from Kaggle: Heart Attack Prediction
 - ✅ Intuitive web interface with **dark galaxy theme + ambient piano audio**
-- ✅ Google Colab notebook for **full model analysis + visualization**
+- ✅ Google Colab notebook for **full model analysis + visualization** with full ML pipeline
+- ✅ Data preprocessing, feature selection, and model optimization
 - ✅ PPT-style **interactive presentation and project walkthrough**
 - ✅ Auto-calculated BMI, stress levels, and user-friendly interface
-
+- ✅ Deployment using GitHub Pages
 ---
 
 ## 📊 Dataset & Model
