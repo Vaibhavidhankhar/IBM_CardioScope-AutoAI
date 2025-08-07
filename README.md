@@ -106,6 +106,67 @@ You’ll also find multiple **screenshots** of model evaluation and app output f
 
 ---
 
+## Related Links
+
+* [Simplify your AI lifecycle with AutoAI](https://developer.ibm.com/series/explore-autoai/)
+
+---
+
+# Generate Python notebook for pipeline models using AutoAI
+
+## Summary
+
+In this code pattern, we will learn how to automatically generate a Jupyter notebook that will contain Python code of a machine learning model using AutoAI. We will explore, modify and retrain this model pipeline using python code. Lastly, we will deploy this model in Watson Machine Learning using WML APIs.
+
+## Description
+
+AutoAI is a graphical tool available within Watson Studio that analyzes your dataset, generates several model pipelines  and ranks them based on the metric chosen for the problem. This code pattern shows extended features of AutoAI. More basic AutoAI exploration for the same dataset is covered in the [Generate machine learning model pipelines to choose the best model for your problem](https://developer.ibm.com/tutorials/generate-machine-learning-model-pipelines-to-choose-the-best-model-for-your-problem-autoai/) article.
+
+When you have completed this code pattern, you will understand how to:
+
+* Run an AutoAI experiment.
+* Generate and save a Python notebook.
+* Execute notebook and analyse results.
+* Make changes and retrain model using Watson Machine Learning SDKs.
+* Deploy model using Watson Machine Learning from within notebook .
+
+## Architecture components
+
+![architecture](doc/source/images/architecture.png)
+
+## Flow
+
+1. The user submits an AutoAI experiment using default settings.
+1. Multiple pipeline models are generated. A pipeline model of choice from the leaderboard is saved as Jupyter notebook.
+1. The Jupyter notebook is executed and a modified pipeline model is generated within the notebook.
+1. Pipeline model is deployed in Watson Machine Learning using WML APIs.
+
+## Included components
+
+* [IBM Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) - IBM Watson® Studio helps data scientists and analysts prepare data and build models at scale across any cloud.
+* [IBM Watson Machine Learning](https://cloud.ibm.com/catalog/services/machine-learning) - IBM Watson® Machine Learning helps data scientists and developers accelerate AI and machine-learning deployment.
+
+## Featured Technologies
+
+* [Machine Learning](https://developer.ibm.com/articles/introduction-to-machine-learning/) - Science of predicting values by analysing historic data.
+* [Python](https://www.python.org/) - Python is an interpreted, object-oriented, high-level programming language.
+* [Jupyter notebook](https://jupyter.org/) - Open-source web application to help build live code.
+* [scikit-learn](https://scikit-learn.org/stable/) - Python based machine learning library.
+* [lale](https://github.com/IBM/lale) - Python library compatible with scikit-learn for semi-automated data science used in AutoAI SDK
+
+## Prerequisites
+
+* [IBM Cloud account](https://tinyurl.com/y4mzxow5) This code pattern assumes you have an **IBM Cloud** account. Sign up for a no-charge trial account - no credit card required.
+
+> Instructions to get through the list of prerequistes are covered in [this](https://developer.ibm.com/technologies/artificial-intelligence/tutorials/generate-machine-learning-model-pipelines-to-choose-the-best-model-for-your-problem-autoai/) prequel.
+
+* Create a Cloud Object Storage service instance.
+* Create a Watson Studio service instance.
+* Create a Watson Machine Learning service instance.
+* Create a Watson Studio project and load data.
+
+---
+
 
 ## 🙋‍♀️ About the Creator
 
